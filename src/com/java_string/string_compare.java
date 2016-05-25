@@ -37,8 +37,9 @@ public class string_compare {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
-		System.out.println("enter: ");
+		System.out.println("enter string: ");
 		String s = sc.next();
+		System.out.println("enter num char for substring: ");		
 		int k = sc.nextInt();
 		List<String> ll = new ArrayList<String>();
 		String max = s.substring(0,k); // substring 0,3 mean to capature 0,1,2

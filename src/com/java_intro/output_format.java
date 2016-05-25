@@ -1,10 +1,12 @@
 package com.java_intro;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class output_format {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 		// TODO Auto-generated method stub
 /*		Input Format
 
@@ -26,16 +28,19 @@ public class output_format {
 		 * python 50
 		 */
 		
-		Scanner sc = new Scanner(System.in);
+		File file = new File(args[0]);
+		Scanner sc = new Scanner(file);
+		//Scanner sc = new Scanner(System.in);
+		
 		System.out.println("=================");
 		while (sc.hasNext()){ // when user do control-d this hasNext will detect End of File
 			String line = sc.nextLine();
 			String[] str = line.split(" ");
 			int n = Integer.valueOf(str[1]);
-			System.out.printf("%-15s%03d",str[0],n);
+			System.out.printf("%-15s%03d%n",str[0],n);
 		}
 		System.out.println("=================");
-		
+		sc.close();
 
 	}
 

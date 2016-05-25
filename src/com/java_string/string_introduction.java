@@ -28,8 +28,9 @@ public class string_introduction {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
-		System.out.println("enter: ");
+		System.out.println("enter first string: ");
 		String first = sc.nextLine();
+		System.out.println("enter second string: ");		
 		String second = sc.nextLine();
 		char[] f_ca = first.toCharArray();
 		char[] s_ca = second.toCharArray();
@@ -41,6 +42,7 @@ public class string_introduction {
 		System.out.println(first.length()+second.length());
 		System.out.println(ret?"Yes":"No");
 		System.out.println(new String(f_ca)+ " " + new String(s_ca));
+		sc.close();
 	}
 
 }
