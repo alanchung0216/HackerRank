@@ -69,7 +69,9 @@ import java.util.regex.PatternSyntaxException;
 
 
 */
-/*
+/* this one work when I enter from console in 
+ * /Users/alanc/Documents/workspace/JavaOracleRegex/src/com/java_reges/RegexTestHarness.java
+ but not here.
  25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]?[0-9]
 \.25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]?[0-9]
 \.25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]?[0-9]
