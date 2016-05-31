@@ -4,10 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class output_format {
-
-	public static void main(String[] args) throws FileNotFoundException {
-		// TODO Auto-generated method stub
+// https://www.hackerrank.com/challenges/java-output-formatting
 /*		Input Format
 
 		Every line of input will contain a String followed by an integer. 
@@ -21,12 +18,16 @@ public class output_format {
 		The second column contains the integer, expressed in exactly  
 		digits; if the original input has less than three digits, 
 		you must pad your output's leading digits with zeroes.
-*/
-		/*
-		 * java 100
-		 * cpp 65
-		 * python 50
-		 */
+ */
+/*
+ * java 100
+ * cpp 65
+ * python 50
+ */
+
+public class output_format {
+
+	public static void main(String[] args) throws FileNotFoundException {
 		
 		File file = new File(args[0]);
 		Scanner sc = new Scanner(file);
