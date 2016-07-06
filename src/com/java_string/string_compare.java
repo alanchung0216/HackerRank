@@ -58,23 +58,7 @@ public class string_compare {
 	
 	public static void main(String[] args) {
 
-		Scanner sc = new Scanner(System.in);
-		System.out.println("enter string: ");
-		String line = sc.nextLine();
-		System.out.println("enter num char for substring: ");
-		int num = sc.nextInt();
-		String small = line.substring(0,num);
-		String big = line.substring(0,num);
-		for (int i=1; i <= line.length()-num; i++){
-			if (line.substring(i,i+num).compareTo(small) < 0)
-				small = line.substring(i,i+num);
-			if (line.substring(i,i+num).compareTo(big) > 0)
-				big = line.substring(i, i+num);
-			
-		}
-		System.out.println(small);
-		System.out.println(big);
-/*		
+		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("enter string: ");
 		String s = sc.next();
@@ -91,7 +75,7 @@ public class string_compare {
 		}
 		System.out.println(min);
 		System.out.println(max);
-*/
+
 	}
 
 }
