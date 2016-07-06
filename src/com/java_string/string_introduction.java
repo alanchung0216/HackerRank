@@ -63,7 +63,30 @@ them separated by a space, you get "Hello Java".
 import java.util.Scanner;
 
 public class string_introduction {
+//	import java.io.*;
+//	import java.util.*;
 
+//	public class Solution {
+
+	    public static void main(String[] args) {
+	        
+	        Scanner sc=new Scanner(System.in);
+	        System.out.println("enter first : ");
+	        String A=sc.next();
+	        System.out.println("enter second : ");
+	        String B=sc.next();
+	        
+	        System.out.println(A.length()+B.length());
+	        System.out.println((A.compareTo(B) > 0) ? "Yes": "No");
+	        char[] cA = A.toCharArray();
+	        char[] cB = B.toCharArray();
+	        cA[0] = Character.toUpperCase(cA[0]);
+	        cB[0] = Character.toUpperCase(cB[0]);
+	        System.out.println(String.valueOf(cA)+" "+String.valueOf(cB));
+	        sc.close();
+	    }
+	}
+/*
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
@@ -83,5 +106,6 @@ public class string_introduction {
 		System.out.println(new String(f_ca)+ " " + new String(s_ca));
 		sc.close();
 	}
+	*/
 
-}
+
