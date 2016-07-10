@@ -53,8 +53,17 @@ public class anagram {
 	       Arrays.sort(cb);
 	       String sca = new String(ca);
 	       String scb = new String(cb);
-	       if (sca.compareTo(scb) == 0) return true;
-	       return false;
+	       
+	        //return ((sa.compareTo(sb) == 0) ? true : false);  // ok
+	        return sca.equals(scb);  // ok
+/*
+	Java String: compareTo() vs equals()
+	A difference is that "foo".equals((String)null) returns false 
+	while "foo".compareTo((String)null) == 0 throws a NullPointerException. 
+	So they are not always interchangeable even for Strings.
+	but it's usually safe to use both.
+*/
+	      
 	   
 	   }
 	    public static void main(String[] args) {

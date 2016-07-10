@@ -52,7 +52,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class string_compare {
+public class substring_compare {
 	
 	
 	
