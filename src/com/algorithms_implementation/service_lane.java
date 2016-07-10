@@ -18,7 +18,7 @@ public class service_lane {
         for(int a0 = 0; a0 < t; a0++){
             int i = in.nextInt();
             int j = in.nextInt();
-            // find the smallest lane
+            // find the narrowest lane
             int small=width[i];
             for (int k=i; k<=j; k++){
                 if (width[k] < small) small=width[k];

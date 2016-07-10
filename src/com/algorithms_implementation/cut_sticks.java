@@ -5,27 +5,39 @@ import java.util.*;
 import java.text.*;
 import java.math.*;
 import java.util.regex.*;
+
 public class cut_sticks {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
-        int t = in.nextInt();
-        int width[] = new int[n];
-        for(int width_i=0; width_i < n; width_i++){
-            width[width_i] = in.nextInt();
+        int arr[] = new int[n];
+        for(int arr_i=0; arr_i < n; arr_i++){
+            arr[arr_i] = in.nextInt();
+            //System.out.println(arr[arr_i]);
         }
-        for(int a0 = 0; a0 < t; a0++){
-            int i = in.nextInt();
-            int j = in.nextInt();
-            // find the smallest lane
-            int small=width[i];
-            for (int k=i; k<=j; k++){
-                if (width[k] < small) small=width[k];
+        
+        List<Integer> ll = new ArrayList<Integer>();
+        for (int i=0; i < arr.length; i++ ){
+            ll.add(arr[i]);
+            //System.out.println(arr[i]);
+        }
+        Collections.sort(ll);
+ 
+        for (int i=0; i < ll.size(); i++){
+            if (ll.get(0) == 0) {
+                ll.remove(0);
+                i=-1; // set it back so we can start from 0 index again
+                continue;
+            }           
+            System.out.println(ll.size());           
+            int small = ll.get(0);
+            for (int j=0; j < ll.size(); j++){
+ 
+                ll.set(j, ll.get(j) - small);  
+               //System.out.println("cut operation " + ll.get(j));                
             }
-            System.out.println(small);
-        }
-        in.close();
+        }       
     }
 
 }
