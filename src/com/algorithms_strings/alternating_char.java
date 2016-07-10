@@ -16,12 +16,6 @@ public class alternating_char {
         for (int i=0; i<n; i++) {
             String str = sc.nextLine();
             //System.out.println(str);
- 
-                char[] ca = str.toCharArray();
-                //for (int k=0; k<ca.length; k++){
-                //    System.out.println(ca[k]);
-                //}
-                char prev=ca[0];
             
             char pre=str.charAt(0);
             int count=0;
