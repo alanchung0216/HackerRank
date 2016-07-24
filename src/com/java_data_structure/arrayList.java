@@ -39,7 +39,7 @@ public class arrayList {
 			//System.out.println("x "+x + " y "+ y);
 			//System.out.println("x length "+lia.get(x-1).length);
 			// find x and y
-			if ((x < 1) || (x > 5)) System.out.println("RERROR!");
+			if ((x < 1) || (x > 5)) System.out.println("ERROR!");
 			else if ((y > lia.get(x-1).length)) System.out.println("ERROR!");
 			else {
 				System.out.println(lia.get(x-1)[y-1]);
@@ -47,9 +47,6 @@ public class arrayList {
 			//sc.nextLine();
 			q--;
 		}
-
-
-
 
 	}
 }
