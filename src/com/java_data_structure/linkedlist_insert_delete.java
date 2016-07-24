@@ -15,7 +15,7 @@ class Query {
 		this.lx = lx;
 	}
 }
-public class linkedlist {
+public class linkedlist_insert_delete {
 
     public static void main(String[] args) throws FileNotFoundException {
         /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
