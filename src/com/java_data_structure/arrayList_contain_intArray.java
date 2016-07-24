@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class arrayList {
+public class arrayList_contain_intArray {
 
 	public static void main(String[] args) {
 		File file = new File(args[0]);
