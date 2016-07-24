@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class two_d_array {
+public class two_d_hourglass {
 	
 
 	public static void main(String[] args) {
