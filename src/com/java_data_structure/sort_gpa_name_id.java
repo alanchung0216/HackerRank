@@ -5,6 +5,15 @@ import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Scanner;
+
+// question was asked to compare the Student Object
+// the below is good.
+// if was asked to also compare Student fname in nature order
+// then we should also implement Comparable<Student>
+// (overwrite compareTo(Student))
+// public int compareTo(Student s){return this.fname.compareTo(s.fname);}
+// then use Arrays.sort(sa); to get nature order
+
 class Student implements Comparator<Student> {
 	int id;
 	String fname;
