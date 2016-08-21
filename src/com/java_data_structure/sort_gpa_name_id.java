@@ -8,12 +8,15 @@ import java.util.Scanner;
 
 // question was asked to compare the Student Object
 // the below is good.
-// if was asked to also compare Student fname in nature order
-// then we should also implement Comparable<Student>
-// (overwrite compareTo(Student))
-// public int compareTo(Student s){return this.fname.compareTo(s.fname);}
-// then use Arrays.sort(sa); to get nature order
+// three ways.
+// 1. use comparator, and Arrays.sort(array, new Student())
+// 2. use comparator, and Collections.sort(ArrayList, new Student())
+// 3. use comparable, and Collections.sort(ArrayList). 
+	// we can use #3 because all we compare
+	// are int, double and String and they are based on compareTo and equals for nature order. 
+	// if the compare is not based on nature order then this comparable may not be sufficient
 
+/* # 1
 class Student implements Comparator<Student> {
 	int id;
 	String fname;
@@ -33,7 +36,12 @@ class Student implements Comparator<Student> {
 				return s1.fname.compareTo(s2.fname); // order by name
 			}			
 		} else {
-			return (int) (s2.gpa*100 - s1.gpa*100); // descending
+         if (s2.cgpa > s1.cgpa)
+               return 1;
+          else
+               return -1;
+                  
+           return (int) (s2.cgpa*100 - s1.cgpa*100);       // may have problem with decimal point 
 		}		
 	}
 }
@@ -58,3 +66,141 @@ public class sort_gpa_name_id {
 	}
 
 }
+*/
+/* # 2
+import java.util.*;
+
+class Student implements Comparator<Student> {
+   private int id;
+   private String fname;
+   private double cgpa;
+   public Student(int id, String fname, double cgpa) {
+      super();
+      this.id = id;
+      this.fname = fname;
+      this.cgpa = cgpa;
+   }
+    public Student(){}
+    
+   public int getId() {
+      return id;
+   }
+   public String getFname() {
+      return fname;
+   }
+   public double getCgpa() {
+      return cgpa;
+   }
+   public int compare(Student s1, Student s2){
+       if (s1.cgpa == s2.cgpa) {
+           if (s1.fname.equals(s2.fname)){
+               return s1.id - s2.id;               
+           } else
+               return s1.fname.compareTo(s2.fname);           
+       } else 
+          if (s2.cgpa > s1.cgpa)
+               return 1;
+          else
+               return -1;
+                  
+           return (int) (s2.cgpa*100 - s1.cgpa*100);       // may have problem with decimal point 
+   }
+}
+
+//Complete the code
+public class sort_gpa_name_id
+{
+   public static void main(String[] args) throws FileNotFoundException{
+      //Scanner in = new Scanner(System.in);
+		File file = new File(args[0]);
+		Scanner in = new Scanner(file);      
+      int num = Integer.parseInt(in.nextLine());
+      
+      List<Student> studentList = new ArrayList<Student>();
+      while(num>0){
+         int id = in.nextInt();
+         String fname = in.next();
+         double cgpa = in.nextDouble();
+         
+         Student st = new Student(id, fname, cgpa);
+         studentList.add(st);
+         
+         num--;
+      }
+        Collections.sort(studentList,new Student());
+      
+         for(Student st: studentList){
+         System.out.println(st.getFname());
+      }
+   }
+}
+*/
+// # 3
+import java.util.*;
+
+class Student implements Comparable<Student> {
+   private int id;
+   private String fname;
+   private double cgpa;
+   public Student(int id, String fname, double cgpa) {
+      super();
+      this.id = id;
+      this.fname = fname;
+      this.cgpa = cgpa;
+   }
+    public Student(){}
+    
+   public int getId() {
+      return id;
+   }
+   public String getFname() {
+      return fname;
+   }
+   public double getCgpa() {
+      return cgpa;
+   }
+   public int compareTo(Student s1){
+       if (this.cgpa == s1.cgpa) {
+           if (this.fname.equals(s1.fname)){
+               return this.id - s1.id;               
+           } else
+               return this.fname.compareTo(s1.fname);           
+       } else 
+           if (s1.cgpa > this.cgpa)
+               return 1;
+          else
+               return -1;
+          //return (int) (s2.cgpa*100 - s1.cgpa*100);     // may have problem with decimal point   	   
+               
+   }
+}
+
+//Complete the code
+public class sort_gpa_name_id
+{
+   public static void main(String[] args) throws FileNotFoundException{
+      //Scanner in = new Scanner(System.in);
+		File file = new File(args[0]);
+		Scanner in = new Scanner(file);      
+      int num = Integer.parseInt(in.nextLine());
+      
+      List<Student> studentList = new ArrayList<Student>();
+      while(num>0){
+         int id = in.nextInt();
+         String fname = in.next();
+         double cgpa = in.nextDouble();
+         
+         Student st = new Student(id, fname, cgpa);
+         studentList.add(st);
+         
+         num--;
+      }
+        Collections.sort(studentList);
+      
+         for(Student st: studentList){
+         System.out.println(st.getFname());
+      }
+   }
+}
+
+

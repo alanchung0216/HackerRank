@@ -11,8 +11,14 @@ class Checker implements Comparator<Player> {
 	public int compare(Player a, Player b){
 		if (a.score == b.score){
 			return a.name.compareTo(b.name);
-		} else 
-			return b.score - a.score;
+		} else {
+	        if (b.score > a.score) 
+	            return 1;
+	        else
+	            return -1;	
+	        
+	        //return b.score - a.score; // OK too
+		}
 	}
 	
 }

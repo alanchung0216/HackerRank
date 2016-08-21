@@ -24,10 +24,11 @@ public class subarray_negValue {
             ia[i] = sc.nextInt();
         }
         //int max = ia[0];
-        int sub_sum=0;
+        
         int count = 0;
         
         for (int i=0; i<ia.length; i++){
+        	int sub_sum=0;
             for (int j=i; j<ia.length; j++){
                 sub_sum += ia[j];
                 if (sub_sum < 0) {
@@ -35,7 +36,6 @@ public class subarray_negValue {
                     //max = sub_sum;
                 }
             }
-            sub_sum =0;
         }
         System.out.println(count);
     

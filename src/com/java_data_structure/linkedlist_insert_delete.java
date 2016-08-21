@@ -27,6 +27,7 @@ Insert
 Delete
 0
 */
+    	
         File file = new File(args[0]);
         Scanner sc = new Scanner(file);
         int n = sc.nextInt();
@@ -72,5 +73,54 @@ Delete
         		System.out.printf("%d ", li.get(i));
         }
         sc.close();
+        
+    	/* simpler way. using ArrayList, same result as LinkedList
+        File file = new File(args[0]);
+        Scanner sc = new Scanner(file);
+        //int n = sc.nextInt();
+        //Scanner sc = new Scanner(System.in);
+        int len = sc.nextInt();
+        List<Integer> ia = new ArrayList<Integer>();
+        for (int i=0; i < len; i++){
+            ia.add(Integer.valueOf(sc.nextInt()));
+        }
+        //System.out.println("result ");
+        for (int i=0; i<ia.size(); i++){
+            if (i < ia.size()-1)
+                System.out.print(ia.get(i)+" ");
+            else
+                System.out.println(ia.get(i));
+        }
+        int q = sc.nextInt();
+        //System.out.println("q "+q);
+        sc.nextLine();
+        while (q > 0) {
+            String cmd = sc.nextLine();
+            //System.out.println("cmd "+cmd);
+            switch (cmd){
+                case "Insert": 
+                    int idx = sc.nextInt();
+                    int value = sc.nextInt();
+                    ia.add(idx, value);
+                    break;
+                case "Delete":
+                    int dx = sc.nextInt();
+                    System.out.println("del "+dx);
+                    ia.remove(dx);
+                    
+                    break;            
+                default:
+                    break;
+            }
+            q--;
+            sc.nextLine();
+        }
+        for (int i=0; i<ia.size(); i++){
+            if (i < ia.size()-1)
+                System.out.print(ia.get(i)+" ");
+            else
+                System.out.println(ia.get(i));
+        }
+        */        
     }
 }

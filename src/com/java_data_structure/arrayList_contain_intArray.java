@@ -17,36 +17,29 @@ public class arrayList_contain_intArray {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		int lines = sc.nextInt();
-		//sc.nextLine();
-		List<Integer[]> lia = new ArrayList<Integer[]>();
-		while (lines !=0){
-			int n = sc.nextInt();
-			Integer[] ia = new Integer[n];
-			for (int i=0; i<n; i++){
-				ia[i] = new Integer(sc.nextInt());
-			} 
-			lia.add(ia);
-			//sc.nextLine();
-			lines--;
-		}
-		//System.out.println("size "+lia.size());
-		int q = sc.nextInt();
-		//sc.nextLine();
-		while (q !=0){
-			int x = sc.nextInt();
-			int y = sc.nextInt();
-			//System.out.println("x "+x + " y "+ y);
-			//System.out.println("x length "+lia.get(x-1).length);
-			// find x and y
-			if ((x < 1) || (x > 5)) System.out.println("ERROR!");
-			else if ((y > lia.get(x-1).length)) System.out.println("ERROR!");
-			else {
-				System.out.println(lia.get(x-1)[y-1]);
-			}
-			//sc.nextLine();
-			q--;
-		}
 
+	        int n = sc.nextInt();
+	        List<Integer[]> x = new ArrayList();
+	        
+	        for (int i=0; i< n; i++){
+	            int len = sc.nextInt();
+	            Integer[] ia = new Integer[len];
+	            for (int j=0; j<len; j++){
+	                ia[j] = sc.nextInt();
+	            }
+	            x.add(ia);
+	        }
+	        int q = sc.nextInt();
+	        for (int i=0; i<q; i++){
+	            int qx = sc.nextInt();
+	            int qy = sc.nextInt();
+	            // do query
+	            if ((x.get(qx-1).length == 0) || (x.get(qx-1).length < qy)) {
+	                System.out.println("ERROR!");
+	            } else {
+	                System.out.println(x.get(qx-1)[qy-1]);
+	            }
+
+	        }
 	}
 }

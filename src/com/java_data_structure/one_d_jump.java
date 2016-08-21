@@ -14,35 +14,31 @@ public class one_d_jump {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		int t = sc.nextInt();
-		while (t != 0){
-			int n = sc.nextInt();
-			int m = sc.nextInt();
-			int[] ia = new int[n];
-			for (int i=0; i < ia.length; i++){
-				ia[i] = sc.nextInt();
-			}
-			// can I win
-			boolean win = false;
-			for (int i=0; i<ia.length; i++){
-				if (ia[i] == 0) {
-					// try jump or walk
-					if ((i+m) >= ia.length) {
-						win = true;
-						break;
-					} 
-					else if (ia[i+m] == 0) {
-						i = i+m-1;
-					}
-					else if (ia[i+1] == 1) {
-						break; // lose
-					}
-				} else break; // lose
-			}
-			System.out.println((win) ? "YES" : "NO");
-
-			t--;
-		}
+	       int t = sc.nextInt();
+	        while (t > 0){
+	            int len = sc.nextInt();
+	            int jump = sc.nextInt();
+	            boolean win = false;
+	            int[] ia = new int[len];
+	            for (int i = 0; i < len; i++) {
+	                ia[i] = sc.nextInt();
+	            }
+	            for (int i=0; i < len; i++) {
+	                if (ia[i] == 0){
+	                    if ((i+1 >= len) || (i+jump >= len))  {                      
+	                        win = true;
+	                        break;
+	                    }
+	                    if (ia[i+jump] == 0) {
+	                        i = i+jump-1;
+	                    }
+	                } else {
+	                    break;
+	                }                   
+	            }
+	            System.out.println((win == true) ? "YES" : "NO");
+	            t--;
+	        }
 	}
 }
 
