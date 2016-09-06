@@ -1,5 +1,7 @@
 package com.java_data_structure;
 
+// this one is medium
+//https://www.hackerrank.com/challenges/java-dequeue
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayDeque;
